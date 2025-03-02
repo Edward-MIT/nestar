@@ -1,10 +1,15 @@
-function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 3000); // 3 soniya kutadi
-  });
+// MIT TASK ZJ
+
+function reduceNestedArray(arr: any[]): number {
+    return arr.reduce((sum, item) => {
+        if (Array.isArray(item)) {
+            return sum + reduceNestedArray(item);
+        }
+        if (typeof item === 'number') {
+            return sum + item;
+        }
+        return sum;
+    }, 0);
 }
 
-// Funksiyani chaqirish
-delayHelloWorld("Hello World!").then(console.log);
+console.log(reduceNestedArray([1, [1, 2, [4]]]));
