@@ -7,6 +7,7 @@ import {ApolloDriver} from "@nestjs/apollo"
 import { AppResolver } from './app.resolver';
 import { ComponentsModule } from './components/components.module';
 import { DatabaseModule } from './database/database.module';
+import { AuthModule } from './componenets/auth/auth.module';
 
 
 @Module({
@@ -15,7 +16,7 @@ import { DatabaseModule } from './database/database.module';
     playground: true,
     uploads: false,
     autoSchemaFile:true,
-  }), ComponentsModule, DatabaseModule],
+  }), ComponentsModule, DatabaseModule, AuthModule],
   controllers: [AppController],
   providers: [AppService, AppResolver],
 })
