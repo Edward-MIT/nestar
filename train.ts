@@ -1,16 +1,31 @@
-// TASK ZK
-function printNumbers(): void {
-    let num: number = 1;
-    const interval: NodeJS.Timeout = setInterval(() => {
-      console.log(num);
-      if (num === 5) {
-        clearInterval(interval); // 5 ga yetganda intervalni to‘xtatamiz
-      }
-      num++;
-    }, 1000);
-  }
 
-  printNumbers();
+// Task ZL
+
+function stringToKebab(str: string): string {
+  return str
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+}
+console.log(stringToKebab("I love Kebab"));
+
+
+
+
+// TASK ZK
+// function printNumbers(): void {
+//     let num: number = 1;
+//     const interval: NodeJS.Timeout = setInterval(() => {
+//       console.log(num);
+//       if (num === 5) {
+//         clearInterval(interval); // 5 ga yetganda intervalni to‘xtatamiz
+//       }
+//       num++;
+//     }, 1000);
+//   }
+
+//   printNumbers();
 
 
 // MIT TASK ZJ
