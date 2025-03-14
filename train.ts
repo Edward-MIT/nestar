@@ -1,14 +1,24 @@
 
+// task ZM
+function reverseInteger(num: number): number {
+
+  const reversed = num.toString().split('').reverse().join('');
+
+  return parseInt(reversed, 10);
+}
+
+console.log(reverseInteger(123456789));
+
 // Task ZL
 
-function stringToKebab(str: string): string {
-  return str
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
-}
-console.log(stringToKebab("I love Kebab"));
+// function stringToKebab(str: string): string {
+//   return str
+//       .trim()
+//       .toLowerCase()
+//       .replace(/\s+/g, '-')
+//       .replace(/[^a-z0-9-]/g, '');
+// }
+// console.log(stringToKebab("I love Kebab"));
 
 
 
