@@ -1,13 +1,25 @@
 
-// task ZM
-function reverseInteger(num: number): number {
+// task ZN
 
-  const reversed = num.toString().split('').reverse().join('');
+function rotateArray(arr: number[], index: number): number[] {
+  const part1 = arr.slice(0, index);
+  const part2 = arr.slice(index);
 
-  return parseInt(reversed, 10);
+  return [...part2, ...part1];
 }
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
-console.log(reverseInteger(123456789));
+
+
+// task ZM
+// function reverseInteger(num: number): number {
+
+//   const reversed = num.toString().split('').reverse().join('');
+
+//   return parseInt(reversed, 10);
+// }
+
+// console.log(reverseInteger(123456789));
 
 // Task ZL
 
