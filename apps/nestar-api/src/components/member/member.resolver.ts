@@ -85,7 +85,7 @@ public async getAllMembersByAdmin(@Args('input') input: MembersInquiry): Promise
 
 @Roles(MemberType.ADMIN)
 @Mutation(() => Member)
-public async updateMembeByAdmin(@Args('input') input: MemberUpdate): Promise<Member>{
+public async updateMemberByAdmin(@Args('input') input: MemberUpdate): Promise<Member>{
  console.log("Mutation: updateMembeByAdmin");
  return await this.memberService.updateMemberByAdmin(input);
 }
