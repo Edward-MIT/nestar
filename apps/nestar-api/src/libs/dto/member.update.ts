@@ -52,6 +52,4 @@ export class MemberUpdate{
 
   deleteAt?: Date;
 
-
-
 }
