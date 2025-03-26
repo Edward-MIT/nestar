@@ -68,7 +68,7 @@ export class Property{
   soldAt?: Date;
 
   @Field(() => Date, {nullable: true})
-  delatedAt?: Date;
+  deletedAt?: Date;
 
   @Field(() => Date, {nullable: true})
   constructedAt?: Date;
