@@ -1,31 +1,51 @@
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+    // Agar uzunliklari har xil bo'lsa, tekshirishda qiyinchilik bo'lmasligi uchun saralanadi
+    const sortedArr1 = [...arr1].sort((a, b) => a - b);
+    const sortedArr2 = [...arr2].sort((a, b) => a - b);
 
-// task zo
+    // Har ikkala massivning uzunligi bir xil bo'lishi kerak
+    if (sortedArr1.length !== sortedArr2.length) return false;
 
+    // Har bir elementni tekshirish
+    for (let i = 0; i < sortedArr1.length; i++) {
+        if (sortedArr1[i] !== sortedArr2[i]) return false;
+    }
 
-function areParenthesesBalanced(str: string): boolean {
-  let balance = 0;
-
-  for (const char of str) {
-      if (char === '(') {
-          balance++;
-      } else if (char === ')') {
-          balance--;
-      }
-
-      // Agar istalgan nuqtada balans manfiy bo'lsa, qavslar noto‘g‘ri joylashgan bo‘ladi
-      if (balance < 0) {
-          return false;
-      }
-  }
-
-  // Yakuniy balans 0 bo'lishi kerak
-  return balance === 0;
+    return true;
 }
 
 // Test misollar
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("((qavslar) noto‘g‘ri")); // false
-console.log(areParenthesesBalanced("qavslar(ochiladi)lekin(yopilmaydi")); // false
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));      // false
+
+// // task zo
+
+
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
+
+//   for (const char of str) {
+//       if (char === '(') {
+//           balance++;
+//       } else if (char === ')') {
+//           balance--;
+//       }
+
+//       // Agar istalgan nuqtada balans manfiy bo'lsa, qavslar noto‘g‘ri joylashgan bo‘ladi
+//       if (balance < 0) {
+//           return false;
+//       }
+//   }
+
+//   // Yakuniy balans 0 bo'lishi kerak
+//   return balance === 0;
+// }
+
+// // Test misollar
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("((qavslar) noto‘g‘ri")); // false
+// console.log(areParenthesesBalanced("qavslar(ochiladi)lekin(yopilmaydi")); // false
 
 
 
