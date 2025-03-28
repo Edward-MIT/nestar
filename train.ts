@@ -1,23 +1,44 @@
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-    // Agar uzunliklari har xil bo'lsa, tekshirishda qiyinchilik bo'lmasligi uchun saralanadi
-    const sortedArr1 = [...arr1].sort((a, b) => a - b);
-    const sortedArr2 = [...arr2].sort((a, b) => a - b);
 
-    // Har ikkala massivning uzunligi bir xil bo'lishi kerak
-    if (sortedArr1.length !== sortedArr2.length) return false;
+function findDuplicates(arr: number[]): number[] {
+    const countMap: Record<number, number> = {};
+    const result: number[] = [];
 
-    // Har bir elementni tekshirish
-    for (let i = 0; i < sortedArr1.length; i++) {
-        if (sortedArr1[i] !== sortedArr2[i]) return false;
+    for (const num of arr) {
+        countMap[num] = (countMap[num] || 0) + 1;
     }
 
-    return true;
+    for (const [key, value] of Object.entries(countMap)) {
+        if (value >= 2) {
+            result.push(Number(key));
+        }
+    }
+
+    return result;
 }
 
-// Test misollar
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));      // false
+// Test
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
+
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+//     // Agar uzunliklari har xil bo'lsa, tekshirishda qiyinchilik bo'lmasligi uchun saralanadi
+//     const sortedArr1 = [...arr1].sort((a, b) => a - b);
+//     const sortedArr2 = [...arr2].sort((a, b) => a - b);
+
+//     // Har ikkala massivning uzunligi bir xil bo'lishi kerak
+//     if (sortedArr1.length !== sortedArr2.length) return false;
+
+//     // Har bir elementni tekshirish
+//     for (let i = 0; i < sortedArr1.length; i++) {
+//         if (sortedArr1[i] !== sortedArr2[i]) return false;
+//     }
+
+//     return true;
+// }
+
+// // Test misollar
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));      // true
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));   // true
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
 // // task zo
 
