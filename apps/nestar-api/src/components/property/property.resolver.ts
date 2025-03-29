@@ -58,7 +58,6 @@ public async getProperties(
   return await this.propertyService.getProperties(memberId, input);
 }
 
-  /* GET AGENT PROPERTIES */
   @Roles(MemberType.AGENT)
   @UseGuards(RolesGuard)
   @Query((returns) => Properties)

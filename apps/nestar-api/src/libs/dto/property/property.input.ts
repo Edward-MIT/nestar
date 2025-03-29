@@ -186,7 +186,6 @@ export class APISearch {
 }
 
 
-/* AGENT PROPERTIES INQUIRY */
 @InputType()
 export class AgentPropertiesInquiry {
     @IsNotEmpty()
@@ -225,7 +224,6 @@ export class ALPISearch {
 }
 
 
-/* ALL PROPERTIES INQUIRY */
 @InputType()
 export class AllPropertiesInquiry {
     @IsNotEmpty()
