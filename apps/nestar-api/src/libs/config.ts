@@ -34,7 +34,7 @@ export const lookupMember = {
     from: 'members',
     localField: "memberId",
     foreignField: "_id",
-    as: 'memberDate',
+    as: 'memberData',
   },
 
 };
