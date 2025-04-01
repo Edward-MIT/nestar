@@ -6,10 +6,10 @@ import { AgentsInquiry, LoginInput, MemberInput, MembersInquiry} from '../../lib
 import { MemberStatus, MemberType } from '../../libs/enums/member.enum';
 import { Direction, Message } from '../../libs/enums/common.enum';
 import { AuthService } from '../auth/auth.service';
-import { MemberUpdate } from '../../libs/dto/member.update';
 import { StatisticModifier, T } from '../../libs/types/common';
 import { ViewService } from '../view/view.service';
 import { ViewGroup } from '../../libs/enums/view.enum';
+import { MemberUpdate } from '../../libs/dto/member/member.update';
 
 @Injectable()
 export class MemberService {

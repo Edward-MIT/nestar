@@ -44,7 +44,7 @@ public async updateProperty(
   @AuthMember('_id') memberId: ObjectId,
 ): Promise<Property>{
   console.log("Mutation: updateProperty");
-  input._id = shapeIntoMongoObjectId(input._id);
+  input._id = shapeIntoMongoObjectId(input._id); // id(string) => mongodbObjectID
   return await this.propertyService.updateProperty(memberId, input);
 }
 

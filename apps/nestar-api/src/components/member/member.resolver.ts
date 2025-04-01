@@ -9,7 +9,7 @@ import { ObjectId } from 'mongoose';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { MemberType } from '../../libs/enums/member.enum';
 import { RolesGuard } from '../auth/guards/roles.guard';
-import { MemberUpdate } from '../../libs/dto/member.update';
+import { MemberUpdate } from '../../libs/dto/member/member.update';
 import { getSerialForImage, shapeIntoMongoObjectId, validMimeTypes } from '../../libs/config';
 import { WithoutGuard } from '../auth/guards/without.guard';
 import { GraphQLUpload, FileUpload } from 'graphql-upload';
