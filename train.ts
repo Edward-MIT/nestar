@@ -1,23 +1,43 @@
 
-function findDuplicates(arr: number[]): number[] {
-    const countMap: Record<number, number> = {};
-    const result: number[] = [];
 
-    for (const num of arr) {
-        countMap[num] = (countMap[num] || 0) + 1;
-    }
 
-    for (const [key, value] of Object.entries(countMap)) {
-        if (value >= 2) {
-            result.push(Number(key));
+function countNumberAndLetters(str: string): { number: number, letter: number } {
+    let count = { number: 0, letter: 0 };
+
+    for (let char of str) {
+        if (/[0-9]/.test(char)) {
+            count.number++;
+        } else if (/[a-zA-Z]/.test(char)) {
+            count.letter++;
         }
     }
 
-    return result;
+    return count;
 }
 
-// Test
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
+console.log(countNumberAndLetters("string152%\u00a5")); // { number: 3, letter: 6 }
+
+
+
+// function findDuplicates(arr: number[]): number[] {
+//     const countMap: Record<number, number> = {};
+//     const result: number[] = [];
+
+//     for (const num of arr) {
+//         countMap[num] = (countMap[num] || 0) + 1;
+//     }
+
+//     for (const [key, value] of Object.entries(countMap)) {
+//         if (value >= 2) {
+//             result.push(Number(key));
+//         }
+//     }
+
+//     return result;
+// }
+
+// // Test
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
 
 // function areArraysEqual(arr1: number[], arr2: number[]): boolean {
 //     // Agar uzunliklari har xil bo'lsa, tekshirishda qiyinchilik bo'lmasligi uchun saralanadi

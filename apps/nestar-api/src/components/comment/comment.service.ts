@@ -109,4 +109,10 @@ public async getComments(memberId: ObjectId, input: CommentsInquiry): Promise<Co
     return result[0];
 }
 
+public async removeCommentByAdmin(input: ObjectId): Promise<Comment> {
+    const result = await this.commentModule.findByIdAndDelete(input);
+    if (!result) throw new InternalServerErrorException(Message.REMOVE_FAILED);
+    return result;
+}
+
 }
