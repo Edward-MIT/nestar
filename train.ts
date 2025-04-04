@@ -1,21 +1,28 @@
+// Task ZS
 
-
-
-function countNumberAndLetters(str: string): { number: number, letter: number } {
-    let count = { number: 0, letter: 0 };
-
-    for (let char of str) {
-        if (/[0-9]/.test(char)) {
-            count.number++;
-        } else if (/[a-zA-Z]/.test(char)) {
-            count.letter++;
-        }
-    }
-
-    return count;
+function singleNumber(nums: number[]): number {
+    return nums.reduce((acc, num) => acc ^ num, 0);
 }
 
-console.log(countNumberAndLetters("string152%\u00a5")); // { number: 3, letter: 6 }
+console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+
+
+
+// function countNumberAndLetters(str: string): { number: number, letter: number } {
+//     let count = { number: 0, letter: 0 };
+
+//     for (let char of str) {
+//         if (/[0-9]/.test(char)) {
+//             count.number++;
+//         } else if (/[a-zA-Z]/.test(char)) {
+//             count.letter++;
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(countNumberAndLetters("string152%\u00a5")); // { number: 3, letter: 6 }
 
 
 
