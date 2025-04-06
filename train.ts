@@ -1,10 +1,36 @@
+// Task ZT
+
+function firstUniqueCharIndex(s: string): number {
+    const charCount: Record<string, number> = {};
+
+    for (const char of s) {
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    for (let i = 0; i < s.length; i++) {
+      if (charCount[s[i]] === 1) {
+        return i;
+      }
+    }
+
+    return -1;
+  }
+
+  console.log(firstUniqueCharIndex("stamp")); // 0
+  console.log(firstUniqueCharIndex("success")); // 1 ('u')
+  console.log(firstUniqueCharIndex("aabb")); // -1
+
+
+
+
+
 // Task ZS
 
-function singleNumber(nums: number[]): number {
-    return nums.reduce((acc, num) => acc ^ num, 0);
-}
+// function singleNumber(nums: number[]): number {
+//     return nums.reduce((acc, num) => acc ^ num, 0);
+// }
 
-console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+// console.log(singleNumber([4, 2, 1, 2, 1])); // 4
 
 
 
